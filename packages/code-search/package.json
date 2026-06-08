@@ -1,0 +1,26 @@
+{
+  "name": "@mcp-toolkit/code-search",
+  "version": "1.0.0",
+  "description": "MCP server — semantic + keyword search across your codebase",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-code-search": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mcp-toolkit/core": "*",
+    "glob": "^10.4.0",
+    "ignore": "^5.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "@types/node": "^20.0.0"
+  },
+  "license": "MIT"
+}

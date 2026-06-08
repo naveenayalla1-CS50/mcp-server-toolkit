@@ -1,0 +1,28 @@
+{
+  "name": "@mcp-toolkit/database",
+  "version": "1.0.0",
+  "description": "MCP server — natural language queries for Postgres, MySQL, SQLite",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-database": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mcp-toolkit/core": "*",
+    "pg": "^8.11.0",
+    "better-sqlite3": "^9.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.11.0",
+    "@types/better-sqlite3": "^7.6.0"
+  },
+  "license": "MIT"
+}
