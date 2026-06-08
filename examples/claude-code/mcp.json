@@ -1,0 +1,27 @@
+{
+  "servers": {
+    "code-search": {
+      "command": "npx",
+      "args": ["-y", "@mcp-toolkit/code-search", "."],
+      "description": "Semantic + keyword search across your codebase"
+    },
+    "database": {
+      "command": "npx",
+      "args": ["-y", "@mcp-toolkit/database", "--read-only"],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      },
+      "description": "Natural language SQL queries (read-only)"
+    },
+    "docs": {
+      "command": "npx",
+      "args": ["-y", "@mcp-toolkit/docs", "./docs"],
+      "description": "Search your local documentation"
+    },
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@mcp-toolkit/git", "."],
+      "description": "Query git history, diffs, and blame"
+    }
+  }
+}
