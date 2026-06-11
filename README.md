@@ -305,3 +305,28 @@ You're free to use this in personal projects, commercial products, and anything 
 Built with ❤️ for the agent era.
 
 </div>
+
+## MCP server usage
+
+This repository contains a TypeScript/Node.js toolkit of MCP servers.
+
+### Install
+
+```bash
+npm install
+npm run build
+npm run build --workspace=@mcp-toolkit/core
+npm run build --workspace=@mcp-toolkit/code-search
+node packages/code-search/dist/index.js
+
+
+
+## MCP server usage
+
+This repository contains a TypeScript/Node.js toolkit of MCP servers.
+
+### Install
+
+```bash
+npm install
+npm run build
