@@ -1,0 +1,16 @@
+node_modules/
+dist/
+packages/*/dist/
+examples/*/dist/
+
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+
+!*.config.js
+!scripts/**/*.js
+
+.env
+.env.*
+.DS_Store
