@@ -1,0 +1,28 @@
+{
+  "name": "MCP Server Toolkit",
+  "description": "A TypeScript/Node.js MCP toolkit with servers for code search, documentation lookup, databases, Git operations, and developer workflows.",
+  "runtime": "node",
+  "language": "typescript",
+  "categories": [
+    "Developer Tools",
+    "Code Search",
+    "Documentation",
+    "Databases",
+    "Version Control"
+  ],
+  "install": {
+    "commands": [
+      "npm install --legacy-peer-deps",
+      "npm run build --workspace=@mcp-toolkit/core",
+      "npm run build --workspace=@mcp-toolkit/code-search"
+    ]
+  },
+  "start": {
+    "command": "node packages/code-search/dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naveenayalla1-CS50/mcp-server-toolkit"
+  },
+  "license": "MIT"
+}
