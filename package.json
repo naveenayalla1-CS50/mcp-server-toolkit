@@ -10,14 +10,15 @@
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces --if-present",
     "lint": "eslint packages/*/src/**/*.ts",
-    "new-server": "node scripts/scaffold.js"
+    "new-server": "node scripts/scaffold.js",
+    "start": "node packages/code-search/dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.4.0",
-    "eslint": "^9.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.4.0",
     "vitest": "^1.6.0"
   },
   "engines": {
