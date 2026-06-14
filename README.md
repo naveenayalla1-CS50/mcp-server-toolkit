@@ -5,6 +5,7 @@
 ### Build plug-and-play MCP servers for any dev workflow — code search, docs, databases, and more.
 
 [![npm version](https://img.shields.io/npm/v/mcp-server-toolkit?color=7F77DD&label=npm&style=flat-square)](https://www.npmjs.com/package/mcp-server-toolkit)
+[![Glama Score](https://glama.ai/mcp/servers/naveenayalla1-CS50/mcp-server-toolkit/badges/score.svg)](https://glama.ai/mcp/servers/naveenayalla1-CS50/mcp-server-toolkit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-5DCAA5?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-378ADD?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Works with Claude Code](https://img.shields.io/badge/Claude%20Code-ready-AFA9EC?style=flat-square)](https://docs.anthropic.com/claude-code)
