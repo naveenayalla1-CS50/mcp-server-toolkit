@@ -43,10 +43,7 @@ export function createServer(options: ServerOptions) {
     tools: tools.map((t): MCPTool => ({
       name: t.name,
       description: t.description,
-      inputSchema: {
-        type: 'object' as const,
-        properties: zodToJsonSchema(t.input),
-      },
+      inputSchema: zodToJsonSchema(t.input),,
     })),
   }));
 
@@ -85,21 +82,108 @@ export function createServer(options: ServerOptions) {
 
 // minimal zod → JSON schema (covers the common cases)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function zodToJsonSchema(schema: ZodSchema): Record<string, any> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const shape = (schema as any)._def?.shape?.();
-  if (!shape) return {};
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const props: Record<string, any> = {};
-  for (const [key, val] of Object.entries(shape)) {
+  const def = (schema as any)._def;
+  const typeName = def?.typeName;
+
+  if (typeName === 'ZodObject') {
+    const shape = def.shape();
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const v = val as any;
-    const typeName = v._def?.typeName;
-    if (typeName === 'ZodString') props[key] = { type: 'string', description: v.description };
-    else if (typeName === 'ZodNumber') props[key] = { type: 'number', description: v.description };
-    else if (typeName === 'ZodBoolean') props[key] = { type: 'boolean', description: v.description };
-    else if (typeName === 'ZodOptional') props[key] = { ...zodToJsonSchema(v._def.innerType), description: v.description };
-    else props[key] = { type: 'string' };
+    const properties: Record<string, any> = {};
+    const required: string[] = [];
+
+    for (const [key, value] of Object.entries(shape)) {
+      const child = value as ZodSchema;
+
+      properties[key] = zodToJsonSchema(child);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const childTypeName = (child as any)._def?.typeName;
+
+      if (
+        childTypeName !== 'ZodOptional' &&
+        childTypeName !== 'ZodDefault'
+      ) {
+        required.push(key);
+      }
+    }
+
+    return {
+      type: 'object',
+      properties,
+      ...(required.length > 0 ? { required } : {}),
+    };
   }
-  return props;
+
+  if (typeName === 'ZodString') {
+    return {
+      type: 'string',
+      ...(schema.description
+        ? { description: schema.description }
+        : {}),
+    };
+  }
+
+  if (typeName === 'ZodNumber') {
+    return {
+      type: 'number',
+      ...(schema.description
+        ? { description: schema.description }
+        : {}),
+    };
+  }
+
+  if (typeName === 'ZodBoolean') {
+    return {
+      type: 'boolean',
+      ...(schema.description
+        ? { description: schema.description }
+        : {}),
+    };
+  }
+
+  if (typeName === 'ZodEnum') {
+    return {
+      type: 'string',
+      enum: def.values,
+      ...(schema.description
+        ? { description: schema.description }
+        : {}),
+    };
+  }
+
+  if (typeName === 'ZodArray') {
+    return {
+      type: 'array',
+      items: zodToJsonSchema(def.type),
+      ...(schema.description
+        ? { description: schema.description }
+        : {}),
+    };
+  }
+
+  if (
+    typeName === 'ZodOptional' ||
+    typeName === 'ZodNullable' ||
+    typeName === 'ZodDefault'
+  ) {
+    const inner = def.innerType ?? def.schema;
+
+    return {
+      ...zodToJsonSchema(inner),
+      ...(schema.description
+        ? { description: schema.description }
+        : {}),
+    };
+  }
+
+  return {
+    type: 'string',
+    ...(schema.description
+      ? { description: schema.description }
+      : {}),
+  };
 }
