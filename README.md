@@ -2,8 +2,9 @@
 
 # 🔌 MCP Server Toolkit
 
+| `mcp-memory` | `npx mcp-memory` | Persist and recall architecture decisions, patterns, constraints, and project context |
 ### Build plug-and-play MCP servers for any dev workflow — code search, docs, databases, and more.
-
+* 🧠 **Persistent project memory** — Remember architecture decisions, patterns, constraints, and project conventions across AI coding sessions.
 [![npm version](https://img.shields.io/npm/v/mcp-server-toolkit?color=7F77DD&label=npm&style=flat-square)](https://www.npmjs.com/package/mcp-server-toolkit)
 [![MCP](https://glama.ai/mcp/servers/naveenayalla1-CS50/mcp-server-toolkit/badge.svg)](https://glama.ai/mcp/servers/naveenayalla1-CS50/mcp-server-toolkit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-5DCAA5?style=flat-square)](LICENSE)
@@ -13,7 +14,7 @@
 [![Works with Windsurf](https://img.shields.io/badge/Windsurf-ready-AFA9EC?style=flat-square)](https://codeium.com/windsurf)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-0F6E56?style=flat-square)](CONTRIBUTING.md)
 [![Stars](https://img.shields.io/github/stars/naveenayalla1-CS50/mcp-server-toolkit?style=flat-square&color=EF9F27)](https://github.com/naveenayalla1-CS50/mcp-server-toolkit/stargazers)
-
+| `mcp-memory` | `npx mcp-memory` | Persist and recall architecture decisions, patterns, constraints, and project context |
 **Give any AI coding agent a direct line into your codebase, docs, or database — in under 60 seconds.**
 
 [Quick Start](#-quick-start) · [Servers](#-included-servers) · [Build Your Own](#-build-your-own-server) · [Discord](https://discord.gg/your-invite) · [Changelog](CHANGELOG.md)
