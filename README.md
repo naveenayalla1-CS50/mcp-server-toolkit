@@ -17,6 +17,8 @@
 | `mcp-memory` | `npx mcp-memory` | Persist and recall architecture decisions, patterns, constraints, and project context |
 **Give any AI coding agent a direct line into your codebase, docs, or database — in under 60 seconds.**
 
+  [![M8ven Verified](https://m8ven.ai/badge/mcp/naveenayalla1-cs50-mcp-server-toolkit-1lxhv6?variant=verified)](https://m8ven.ai/mcp/naveenayalla1-cs50-mcp-server-toolkit-1lxhv6)
+
 [Quick Start](#-quick-start) · [Servers](#-included-servers) · [Build Your Own](#-build-your-own-server) · [Discord](https://discord.gg/your-invite) · [Changelog](CHANGELOG.md)
 
 ---
