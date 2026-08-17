@@ -1,7 +1,7 @@
 {
   "name": "@mcp-toolkit/memory",
   "version": "1.0.0",
-  "description": "MCP server — persistent project architecture, patterns, constraints, and decisions",
+  "description": "MCP server \u2014 persistent project architecture, patterns, constraints, and decisions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -11,7 +11,7 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/index.js",
-    "test": "vitest run"
+    "test": "vitest run --exclude \"dist/**\""
   },
   "dependencies": {
     "@mcp-toolkit/core": "*",
