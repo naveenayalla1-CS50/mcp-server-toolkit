@@ -43,7 +43,7 @@ export function createServer(options: ServerOptions) {
     tools: tools.map((t): MCPTool => ({
       name: t.name,
       description: t.description,
-      inputSchema: zodToJsonSchema(t.input),,
+      inputSchema: zodToJsonSchema(t.input),
     })),
   }));
 
